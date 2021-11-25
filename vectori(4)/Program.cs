@@ -1,18 +1,19 @@
 ﻿using System;
 
 namespace vectori_4_
-{
+{   static class number
+    {
+       public static int nr=1;
+    }
     class Program
     {
-        
         static void Main(string[] args)
         {
             int[] fibo = Fibonacci(5);
-            Console.WriteLine(fibo[0]);
-            for (int i = 0; i < fibo.Length; i++)
+          
+            for (int i = 1; i <=number.nr; i++)
             {
-                if (fibo[i] != 0)
-                Console.WriteLine(fibo[i]);
+                Console.WriteLine(fibo[i-1]);
             }
         }
         
@@ -25,9 +26,10 @@ namespace vectori_4_
             F[1] = 1;
             if (n == 1) return F;
             int i = 1;
-           
+            number.nr = 2;
             while (F[i] < n)
             {
+                number.nr++;
                 i++;
                 F[i] = F[i - 1] + F[i - 2];
 
